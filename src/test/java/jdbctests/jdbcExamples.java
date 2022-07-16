@@ -1,10 +1,12 @@
+package jdbctests;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.sql.*;
 
 public class jdbcExamples {
-    String dbUrl = "jdbc:oracle:thin:@44.202.119.26:1521:XE";
+    String dbUrl = "jdbc:oracle:thin:@52.90.56.79:1521:XE";
     String dbUsername = "hr";
     String dbPassword = "hr";
 
