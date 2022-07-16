@@ -12,10 +12,8 @@ public class DButils {
     private static ResultSet resultSet;
 
 
-    public static void createConnection() {
-        String dbUrl = "jdbc:oracle:thin:@52.90.56.79:1521:XE";
-        String dbUsername = "hr";
-        String dbPassword = "hr";
+    public static void createConnection(String dbUrl,String dbUsername,String dbPassword) {
+
         try {
             connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
         } catch (SQLException e) {
@@ -23,6 +21,18 @@ public class DButils {
             e.printStackTrace();
         }
     }
+    public static void createConnection() {
+        String dbUrl = ConfigurationReader.getProperty("qa1.library.url");
+        String dbUsername = ConfigurationReader.getProperty("qa1.library.username");
+        String dbPassword = ConfigurationReader.getProperty("qa1.library.password");
+        try {
+            connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
 
     public static void destroy() {
         try {
